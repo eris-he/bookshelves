@@ -1,5 +1,7 @@
 <?php
-require "../public_html/imports.php";
+require "../vendor/autoload.php";
+$dotenv = Dotenv\Dotenv::createImmutable("../");
+$dotenv->load();
 
 class DB {
     private static $init = FALSE;

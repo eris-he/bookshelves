@@ -1,5 +1,5 @@
 <?php
-    require '../database/dbConn.php';
+    require 'imports.php';
 ?>
 
 <DOCTYPE html>
