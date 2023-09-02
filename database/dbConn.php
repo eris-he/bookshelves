@@ -14,8 +14,6 @@ class DB {
         if (self::$conn->connect_error) {
             echo "<h1>Connection failed<h1>";
             die("Connection failed: " . self::$conn->connect_error);
-        } else {
-            echo "<h1>Connected successfully<h1>";
         }
         self::$init = TRUE;
     }
