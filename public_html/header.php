@@ -40,7 +40,7 @@
         </div>
     </div>
 </div>
-
+<hr>
 <!-- The form -->
 <div class="form-popup" id="loginForm">
   <form method="POST" action="../user/login.php" class="form-container">
