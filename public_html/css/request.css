@@ -1,0 +1,21 @@
+.body-styling {
+    /* centering the form */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-label {
+    display: flex;
+    width: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-input {
+    display: flex;
+    margin: 0.5rem;
+    margin-top: 0;
+    align-items: center;
+    justify-content: center;
+}

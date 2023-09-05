@@ -1,11 +1,31 @@
 <?php
-    require 'imports.php';
+    session_start();
+    require "vendor/autoload.php";
+    $dotenv = Dotenv\Dotenv::createImmutable("../");
+    $dotenv->load();
+    require 'header.php';
+    require 'footer.php';
+
+    function initialize() {
+        global $init;
+        global $conn;
+        if ($init) return;
+        $conn = new mysqli($_ENV['DB_SERVER'], $_ENV['DB_USER'], $_ENV['DB_PW'], $_ENV['DB']);
+        if ($conn->connect_error) {
+            echo "<h1>Connection failed<h1>";
+            die("Connection failed: " . $conn->connect_error);
+        }
+        $init = TRUE;
+    }
+
+    initialize();
 ?>
 
 <DOCTYPE html>
 <html>
     <head>
         <title>Well Red Bookshelves</title>
+        <link href="css/Site.css" rel="stylesheet" />
     </head>
     <div class="body-template">
         <div>
@@ -17,14 +37,14 @@
         <div>
             <?php
                 echo "This is to test the database connection.";
-                $resNumber = DB::$conn->query("SELECT * FROM reservations WHERE iStatus = 2");
+                $resNumber = $conn->query("SELECT * FROM reservations WHERE iStatus = 2");
                 $obj2 = $resNumber->fetch_object();
                 echo ".$obj2->vcReservationNumber.";
             ?>
         </div>
         <div>
             <?php
-                echo $_SESSION["username"];
+                echo 'Your username is... '.$_SESSION['username'].'.';
             ?>
         </div>
 </div>
