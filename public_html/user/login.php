@@ -1,6 +1,6 @@
 <?php
 session_start();
-require '../imports.php';
+require '../database/dbConn.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     // Get the submitted username and password
@@ -22,8 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             $_SESSION["username"] = $username;
             $_SESSION["is_admin"] = true; // Assuming the user is an admin
 
-            // Redirect to a logged-in page or perform other actions
-            header("location: /");
+            if (isset($_SESSION['return_to'])) {
+                // Redirect the user back to the saved URL
+                header('Location: ' . $_SESSION['return_to']);
+                exit();
+            } else {
+                // If no saved URL is found, redirect to a default page
+                header('Location: /');
+                exit();
+            }
         } else {
             // Authentication failed
             // return to index page but with an error message

@@ -9,39 +9,50 @@
     <link href="/css/header.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script type="text/javascript" src="/js/header.js"></script>
 </head>
 <div id="header">
-    <div class="row">
-        <div class="col-md-4">
-            <a href="/">
-                <img id="header-img" src="/img/wellredfox.png" alt="Well Red Bookshelves Logo">
-            </a>
-        </div>
-        <div class="col-md-8 center top-links">
-            <a class="header-link" href="/"> In Stock </a>
-            <a class="header-link" href="/request/request.php"> Request a Book </a>
-            <a class="header-link" href="/lookup/lookup.php"> Look Up a Request </a>
-            <!-- check if logged in and if they are admin, then if yes, display admin link -->
-            <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    if ($_SESSION['is_admin'] == true) {
-                    echo '<a class="header-link" href="/admin/admin-dashboard.php"> Admin </a>';
+    <div class>
+        <div class="row" id="navLinks">
+            <div class="col-md-4 row">
+                <div>
+                    <a href="/">
+                        <img id="header-img" src="/img/wellredfox.png" alt="Well Red Bookshelves Logo">
+                    </a>
+                </div>
+                <div id="icon-toggle">
+                    <a class="icon" data-bs-toggle="collapse" href="#top-links">
+                        <i class="fa-solid fa-bars fa-2xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-8 center d-flex" id="top-links">
+                <a class="header-link" href="/"> In Stock </a>
+                <a class="header-link" href="/request/request.php"> Request a Book </a>
+                <a class="header-link" href="/lookup/lookup.php"> Look Up a Request </a>
+                <!-- check if logged in and if they are admin, then if yes, display admin link -->
+                <?php
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        if ($_SESSION['is_admin'] == true) {
+                        echo '<a class="header-link" href="/admin/admin-dashboard.php"> Admin </a>';
+                        }
                     }
-                }
-            ?>
-            <!-- check if logged in, then if yes, display logout link -->
-            <?php
-                if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                    echo '<a class="header-link" href="/user/logout.php"> Logout </a>';
-                }
-            ?>
-            <!-- check if logged in, then if no, display login link -->
-            <?php
-                if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-                    echo '<a class="header-link" onclick="openForm()"> Admin Login </a>';
-                }
-            ?>
+                ?>
+                <!-- check if logged in, then if yes, display logout link -->
+                <?php
+                    if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+                        echo '<a class="header-link" href="/user/logout.php"> Logout </a>';
+                    }
+                ?>
+                <!-- check if logged in, then if no, display login link -->
+                <?php
+                    if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
+                        echo '<a class="header-link" onclick="openForm()"> Admin Login </a>';
+                    }
+                ?>
+            </div>
         </div>
     </div>
 </div>

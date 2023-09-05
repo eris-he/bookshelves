@@ -1,8 +1,8 @@
 <?php
-require '../imports.php';
 require 'request_algo.php';
+require '../database/dbConn.php';
 
-if($_SERVER["REQUEST_METHOD"] === "POST") {
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $_POST["title"];
     $author = $_POST["author"];
     $isbn = $_POST["isbn"];
@@ -10,11 +10,17 @@ if($_SERVER["REQUEST_METHOD"] === "POST") {
     $status = "Pending";
     $sql = "INSERT INTO requests (vcRequestNumber, vcTitle, vcAuthor, vcISBN, vcStatus) VALUES ('$requestNumber', '$title', '$author', '$isbn', '$status')";
     $result = DB::$conn->query($sql);
+
     if ($result) {
-        echo "Request submitted successfully!";
+        $response = ['status' => 'success', 'message' => 'Request processed successfully.'];
     } else {
-        echo "Error: " . $sql . "<br>" . DB::$conn->error;
+        $response = ['status' => 'error', 'message' => 'An error occurred during processing.'];
     }
+
     DB::$conn->close();
+    
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 ?>
+

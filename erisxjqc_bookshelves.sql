@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Sep 04, 2023 at 11:07 PM
+-- Generation Time: Sep 04, 2023 at 11:19 PM
 -- Server version: 10.5.20-MariaDB-cll-lve
 -- PHP Version: 7.4.27
 
@@ -55,6 +55,14 @@ CREATE TABLE `requests` (
   `vcNotes` varchar(60000) NOT NULL,
   `bIsArchived` tinyint(1) NOT NULL DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
+
+--
+-- Dumping data for table `requests`
+--
+
+INSERT INTO `requests` (`vcRequestNumber`, `vcTitle`, `vcAuthor`, `vcISBN`, `vcStatus`, `vcNotes`, `bIsArchived`) VALUES
+('1k2kd9sjflekdnslaue38d2o30', 'Test Book', 'Test Author', '???????', 'Pending', 'this is a test book', 0),
+('1k2kd9sjflekdnslaue38d2o03', 'Test Book', 'Test Author', '???????', 'Pending', 'this is a test book', 0);
 
 -- --------------------------------------------------------
 

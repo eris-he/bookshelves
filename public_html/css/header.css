@@ -48,8 +48,7 @@
     transform: scale(1);
 }
 
-.top-links {
-    display:flex;
+#top-links {
     justify-content: space-evenly;
     text-align: center;
     align-items: center;
@@ -108,4 +107,30 @@
 /* Add some hover effects to buttons */
 .form-container .btn:hover, .open-button:hover {
   opacity: 1;
+}
+
+.icon {
+  display: none;
+}
+
+/* When the screen size is smaller than 768 px, use a collapsible dropdown nav*/
+@media screen and (max-width: 768px) {
+  .icon {
+      float: right;
+      display: block;
+  }
+
+  #icon-toggle {
+    /* Center it*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #header-img {
+    /* Center it*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
