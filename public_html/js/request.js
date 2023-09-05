@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     // Reference to the form and success toast
     const requestForm = document.getElementById('request-form');
-    const successToast = document.getElementById('success-toast');
 
     // Add an event listener for the form submission
     requestForm.addEventListener('submit', function(event) {
@@ -17,31 +16,32 @@ document.addEventListener('DOMContentLoaded', function() {
             body: formData,
         })
         .then(response => {
-            console.log(response)
             return response.json()
         })
         .then(data => {
-            console.log(data)
             if (data.status === 'success') {
-                // Display the success toast
-                successToast.style.display = 'block';
-                console.log("success");
+                let toast = {
+                    title: "Success",
+                    message: "Your request has been submitted successfully",
+                    status: TOAST_STATUS.SUCCESS,
+                    timeout: 5000
+                }
+                Toast.create(toast);
+            } else {
+                let toast = {
+                    title: "Error",
+                    message: "Your request could not be submitted",
+                    status: TOAST_STATUS.ERROR,
+                    timeout: 5000
+                }
+                Toast.create(toast);
             }
+            requestForm.reset();
         })
         .catch(error => {
             console.log("error")
             console.error('Error:', error);
-
-            // if (error.response) {
-            //     error.response.json() // Parse the response as JSON
-            //       .then(errorData => {
-            //         // Handle and display the JSON data from the error
-            //         console.error('Error response data:', errorData);
-            //       })
-            //       .catch(innerError => {
-            //         console.error('Error parsing error response:', innerError);
-            //       });
-            //   }
+            requestForm.reset();
         });
     });
 });
