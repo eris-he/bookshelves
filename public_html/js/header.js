@@ -22,10 +22,12 @@ document.addEventListener("DOMContentLoaded", function(event) {
         document.getElementById("top-links").classList.add("collapse");
         document.getElementById("top-links").classList.remove("d-flex");
         document.getElementById("top-links").classList.add("row");
+        document.getElementById("navLinks").classList.remove("row");
     } else {
         document.getElementById("top-links").classList.remove("collapse");
         document.getElementById("top-links").classList.add("d-flex");
         document.getElementById("top-links").classList.remove("row");
+        document.getElementById("navLinks").classList.add("row");
     }
 });
 
@@ -36,9 +38,11 @@ window.addEventListener("resize", function(event) {
         document.getElementById("top-links").classList.add("collapse");
         document.getElementById("top-links").classList.remove("d-flex");
         document.getElementById("top-links").classList.add("row");
+        document.getElementById("navLinks").classList.remove("row");
     } else {
         document.getElementById("top-links").classList.remove("collapse");
         document.getElementById("top-links").classList.add("d-flex");
         document.getElementById("top-links").classList.remove("row");
+        document.getElementById("navLinks").classList.add("row");
     }
 });

@@ -38,7 +38,7 @@
         <div>
             <?php
                 echo "This is to test the database connection.";
-                $resNumber = $conn->query("SELECT * FROM reservations WHERE iStatus = 2");
+                $resNumber = $conn->query("SELECT * FROM reservations WHERE vcStatus = 'Pending'");
                 $obj2 = $resNumber->fetch_object();
                 echo ".$obj2->vcReservationNumber.";
             ?>

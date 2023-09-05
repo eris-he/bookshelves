@@ -133,4 +133,12 @@
     justify-content: center;
     align-items: center;
   }
+
+  #header {
+    padding: 0px;
+    padding-right:0;
+  }
+
+  ::after, ::before {
+  }
 }
