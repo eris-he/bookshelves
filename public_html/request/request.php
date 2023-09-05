@@ -18,9 +18,12 @@
         <p>
             Can't find the book you're looking for in our store? Request it here and we'll do our best to get it for you!
         </p> 
-        <p>
-            (Requested books are automatically added as a reserved book for you once we get it in stock.)
+        <!-- <p>
+            Requested books are automatically added as a reserved book for you once we get it in stock.
         </p>
+        <p>
+            Please note that reserved books are only reserved for <b>7 days</b> after we receive them.
+        </p> -->
     </div>
     <div class="body-styling">
         <form id="request-form">

@@ -7,9 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $title = $_POST["title"];
     $author = $_POST["author"];
     $isbn = $_POST["isbn"];
+    $date = date("Y-m-d H:i:s");
     $requestNumber = requestNumber::createRequestNumber();
     $status = "Pending";
-    $sql = "INSERT INTO requests (vcRequestNumber, vcTitle, vcAuthor, vcISBN, vcEmail, vcStatus) VALUES ('$requestNumber', '$title', '$author', '$isbn', '$email', '$status')";
+    $sql = "INSERT INTO requests (vcRequestNumber, vcTitle, vcAuthor, vcISBN, vcEmail, dtDateRequested, vcStatus) 
+            VALUES ('$requestNumber', '$title', '$author', '$isbn', '$email', '$date', '$status')";
     $result = DB::$conn->query($sql);
 
     if ($result) {

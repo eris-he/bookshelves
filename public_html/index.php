@@ -1,5 +1,6 @@
 <?php
     session_start();
+    $_SESSION['return_to'] = $_SERVER['REQUEST_URI'];
     require "vendor/autoload.php";
     $dotenv = Dotenv\Dotenv::createImmutable("../");
     $dotenv->load();
