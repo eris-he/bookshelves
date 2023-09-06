@@ -4,5 +4,10 @@
 
 <!DOCTYPE html>
 <!-- Create cards that link to different admin pages -->
-<div class="body-template">
+<div class="footer-wrap">
+    <div class="body-template">
+    </div>
+    <?php
+        require '../footer.php';
+    ?>
 </div>

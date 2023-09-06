@@ -1,6 +1,7 @@
 <?php
 require 'request_algo.php';
 require '../database/dbConn.php';
+require '../email/email.php';
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $email = $_POST["email"];
@@ -15,6 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $result = DB::$conn->query($sql);
 
     if ($result) {
+        Email::requestEmail($email, $requestNumber);
         $response = ['status' => 'success', 'message' => 'Request processed successfully.'];
     } else {
         $response = ['status' => 'error', 'message' => 'An error occurred during processing.'];

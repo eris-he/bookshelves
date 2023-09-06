@@ -5,7 +5,6 @@
     $dotenv = Dotenv\Dotenv::createImmutable("../");
     $dotenv->load();
     require 'header.php';
-    require 'footer.php';
 
     function initialize() {
         global $init;
@@ -23,7 +22,7 @@
 ?>
 
 <DOCTYPE html>
-<html>
+<div class="footer-wrap">
     <head>
         <title>Well Red Bookshelves</title>
         <link href="css/Site.css" rel="stylesheet" />
@@ -48,5 +47,10 @@
                 echo 'Your username is... '.$_SESSION['username'].'.';
             ?>
         </div>
+    </div>
+    <div>
+        <?php
+            require 'footer.php';
+        ?>
+    </div>
 </div>
-</html>

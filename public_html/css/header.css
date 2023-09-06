@@ -1,5 +1,4 @@
 #header{
-    /* background-color: darksalmon; */
     min-width: 100vw;
     margin:0;
     padding:0.5rem;
@@ -8,7 +7,7 @@
 }
 
 #header-img {
-    max-height:10vh;
+    height:10vh;
     margin:auto;
 }
 
@@ -137,8 +136,5 @@
   #header {
     padding: 0px;
     padding-right:0;
-  }
-
-  ::after, ::before {
   }
 }
