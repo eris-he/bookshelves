@@ -16,21 +16,23 @@
     <title>Well Red Bookshelves, a Book Inventory For Well Red</title>
 </head>
 <div id="header">
-    <div class>
+    <div class = "container-fluid">
         <div class="row" id="navLinks">
-            <div class="col-md-4 row">
-                <div>
-                    <a href="/">
-                        <img id="header-img" src="/img/wellredfox.png" alt="Well Red Bookshelves Logo">
-                    </a>
-                </div>
-                <div id="icon-toggle">
-                    <a class="icon" data-bs-toggle="collapse" href="#top-links">
-                        <i class="fa-solid fa-bars fa-2xl"></i>
-                    </a>
+            <div class="col-md-4 container-fluid">
+                <div class="row">
+                    <div>
+                        <a href="/">
+                            <img id="header-img" src="/img/wellredfox.png" alt="Well Red Bookshelves Logo">
+                        </a>
+                    </div>
+                    <div id="icon-toggle">
+                        <a class="icon" data-bs-toggle="collapse" href="#top-links">
+                            <i class="fa-solid fa-bars fa-2xl"></i>
+                        </a>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-8 center d-flex" id="top-links">
+            <div class="col-md-8 center container-fluid" id="top-links">
                 <a class="header-link" href="/"> In Stock </a>
                 <a class="header-link" href="/request/request.php"> Request a Book </a>
                 <a class="header-link" href="/lookup/lookup.php"> Look Up a Request </a>

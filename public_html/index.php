@@ -22,31 +22,23 @@
 ?>
 
 <DOCTYPE html>
+<head>
+    <title>Well Red Bookshelves</title>
+    <link href="css/Site.css" rel="stylesheet" />
+</head>
 <div class="footer-wrap">
-    <head>
-        <title>Well Red Bookshelves</title>
-        <link href="css/Site.css" rel="stylesheet" />
-    </head>
     <div class="body-template">
-        <div>
-            <h1> Hello world! </h1>
-        </div>  
-        <div>
-            <h2> This is the testing and development site for Well Red's custom inventory management system. </h2>
+        <!-- Content for page goes here -->
+        <div class="center">
+            <h1>Welcome to the Well Red Bookshelves!</h1>
+            <h2>Browse and search our catalog of books, available to purchase on-site.</h2>
         </div>
         <div>
             <?php
-                echo "This is to test the database connection.";
-                $resNumber = $conn->query("SELECT * FROM reservations WHERE vcStatus = 'Pending'");
-                $obj2 = $resNumber->fetch_object();
-                echo ".$obj2->vcReservationNumber.";
+                require 'search/search-form.php';
             ?>
         </div>
-        <div>
-            <?php
-                echo 'Your username is... '.$_SESSION['username'].'.';
-            ?>
-        </div>
+
     </div>
     <div>
         <?php
