@@ -13,7 +13,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
         $hashedPassword = $row["vcHashed"];
-        echo $hashedPassword;
 
         // Verify the submitted password against the stored hash
         if (password_verify($password, $hashedPassword)) {
@@ -24,22 +23,32 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
             if (isset($_SESSION['return_to'])) {
                 // Redirect the user back to the saved URL
-                header('Location: ' . $_SESSION['return_to']);
-                exit();
+                $response = ['status' => 'success', 'message' => 'Login successful.'];
+                // header('Content-Type: application/json');
+                // echo json_encode($response);
+                // header('Location: ' . $_SESSION['return_to']);
+                // exit();
             } else {
                 // If no saved URL is found, redirect to a default page
-                header('Location: /');
-                exit();
+                $response = ['status' => 'success', 'message' => 'Login successful.'];
+                // header('Content-Type: application/json');
+                // echo json_encode($response);
+                // header('Location: /');
+                // exit();
             }
         } else {
             // Authentication failed
             // return to index page but with an error message
-            echo "Error: Incorrect username or password. Please try again.";
+            // echo "Error: Incorrect username or password. Please try again.";
+            $response = ['status' => 'error', 'message' => 'Incorrect username or password. Please try again.'];
         }
     } else {
         // User not found
-        echo "Error: Incorrect username or password. Please try again.";
+        $response = ['status' => 'error', 'message' => 'Incorrect username or password. Please try again.'];
     }
     DB::$conn->close();
+
+    header('Content-Type: application/json');
+    echo json_encode($response);
 }
 ?>

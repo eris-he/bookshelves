@@ -10,7 +10,6 @@ document.addEventListener('DOMContentLoaded', function() {
         const formData = new FormData(requestForm);
 
         // Send the form data to the server via AJAX
-        // Replace 'submitRequest.php' with the actual server-side processing script
         fetch('request_controller.php', {
             method: 'POST',
             body: formData,
