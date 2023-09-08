@@ -3,8 +3,14 @@
     bottom: 0;
     left:0;
     width: 100vw;
-    height: 7vh;
-    background-color: #474545;
-    color: #fff;
+    height: 10vh;
+    text-align: center;
+}
 
+#footer-spacer {
+    height:10vh;
+}
+
+#footer-img {
+    max-height:15vh;
 }

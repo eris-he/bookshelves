@@ -10,3 +10,4 @@ require "database/dbConn.php";
 
 <!DOCTYPE html>
 <link href="/css/Site.css" rel="stylesheet" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-toaster@5.2.0-beta1.1/dist/css/bootstrap-toaster.min.css" rel="stylesheet">

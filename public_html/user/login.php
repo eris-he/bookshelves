@@ -24,22 +24,14 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
             if (isset($_SESSION['return_to'])) {
                 // Redirect the user back to the saved URL
                 $response = ['status' => 'success', 'message' => 'Login successful.'];
-                // header('Content-Type: application/json');
-                // echo json_encode($response);
-                // header('Location: ' . $_SESSION['return_to']);
-                // exit();
+
             } else {
                 // If no saved URL is found, redirect to a default page
                 $response = ['status' => 'success', 'message' => 'Login successful.'];
-                // header('Content-Type: application/json');
-                // echo json_encode($response);
-                // header('Location: /');
-                // exit();
+
             }
         } else {
             // Authentication failed
-            // return to index page but with an error message
-            // echo "Error: Incorrect username or password. Please try again.";
             $response = ['status' => 'error', 'message' => 'Incorrect username or password. Please try again.'];
         }
     } else {

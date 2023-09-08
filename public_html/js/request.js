@@ -21,9 +21,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (data.status === 'success') {
                 let toast = {
                     title: "Success",
-                    message: "Your request has been submitted successfully",
+                    message: "Your request has been submitted successfully! <br/> If you do not receive an email with your reservation number, please check your spam folder first.",
                     status: TOAST_STATUS.SUCCESS,
-                    timeout: 5000
+                    timeout: 10000
                 }
                 Toast.create(toast);
             } else {

@@ -33,7 +33,7 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-8 center container-fluid" id="top-links">
+            <div class="col-md-8 center" id="top-links">
                 <a class="header-link" href="/"> In Stock </a>
                 <a class="header-link" href="/request/request.php"> Request a Book </a>
                 <a class="header-link" href="/lookup/lookup.php"> Look Up a Request </a>
@@ -78,6 +78,3 @@
         <!-- clear inputs after logging in or closing form -->
     </form>
 </div>
-
-<script src="https://cdn.jsdelivr.net/npm/bootstrap-toaster@5.2.0-beta1.1/dist/umd/bootstrap-toaster.min.js"></script>
-<link href="https://cdn.jsdelivr.net/npm/bootstrap-toaster@5.2.0-beta1.1/dist/css/bootstrap-toaster.min.css" rel="stylesheet">

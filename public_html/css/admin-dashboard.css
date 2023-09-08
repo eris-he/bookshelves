@@ -1,0 +1,9 @@
+.admin-card{
+    width: 18rem;
+    padding: 1rem;
+    margin: 2rem;
+}
+
+.card-container {
+    justify-content: center;
+}
