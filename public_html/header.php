@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="/css/header.css" rel="stylesheet" />
     <link href="/css/Site.css" rel="stylesheet" />
+    <link href="/css/fonts/stylesheet.css" rel="stylesheet" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css" integrity="sha384-b6lVK+yci+bfDmaY1u0zE8YYJt0TZxLEAFyYSLHId4xoVvsrQu3INevFKo+Xir8e" crossorigin="anonymous">
@@ -34,27 +35,27 @@
                 </div>
             </div>
             <div class="col-md-8 center" id="top-links">
-                <a class="header-link" href="/"> In Stock </a>
-                <a class="header-link" href="/request/request.php"> Request a Book </a>
-                <a class="header-link" href="/lookup/lookup.php"> Look Up a Request </a>
+                <a class="header-link" href="/"> IN STOCK </a>
+                <a class="header-link" href="/request/request.php"> REQUEST A BOOK </a>
+                <a class="header-link" href="/lookup/lookup.php"> LOOK UP A REQUEST </a>
                 <!-- check if logged in and if they are admin, then if yes, display admin link -->
                 <?php
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
                         if ($_SESSION['is_admin'] == true) {
-                        echo '<a class="header-link" href="/admin/admin-dashboard.php"> Admin </a>';
+                        echo '<a class="header-link" href="/admin/admin-dashboard.php"> ADMIN </a>';
                         }
                     }
                 ?>
                 <!-- check if logged in, then if yes, display logout link -->
                 <?php
                     if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
-                        echo '<a class="header-link" href="/user/logout.php"> Logout </a>';
+                        echo '<a class="header-link" href="/user/logout.php"> LOGOUT </a>';
                     }
                 ?>
                 <!-- check if logged in, then if no, display login link -->
                 <?php
                     if (!isset($_SESSION['loggedin']) || $_SESSION['loggedin'] == false) {
-                        echo '<a class="header-link" onclick="openForm()"> Admin Login </a>';
+                        echo '<a class="header-link" onclick="openForm()"> ADMIN LOGIN </a>';
                     }
                 ?>
             </div>

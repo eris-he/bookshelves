@@ -13,20 +13,21 @@
 
 #navLinks {
   box-sizing: border-box;
+  font-family: 'futurabold';
 }
 
 .header-link {
     text-align: center;
     text-decoration: none;
-    font-size:2rem;
-    color:#212529;
+    font-size:1.5rem;
+    color:#7f4a79;
     display:block;
     position: relative;
 }
 
 .header-link:hover {
     cursor: pointer;
-    color: rgb(139, 38, 38);
+    color: rgb(57, 132, 167);
 }
 
 .header-link::after {

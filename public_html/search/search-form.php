@@ -32,7 +32,7 @@
         </div>
         <div class="col-lg-1">
             <!-- Submit button -->
-            <button type="submit" class="btn btn-light">
+            <button type="submit" class="btn btn-light" style="width:100%;">
                 <i class="fa-solid fa-search"></i>
             </button>
         </div>
