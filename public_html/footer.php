@@ -3,6 +3,18 @@
 <div id="footer-spacer">
 </div>
 <div id="footer">
+    <?php
+    // This is a back button to the admin page.
+    // Commented it out because it might be unnecessary due to the inclusion of the admin page at the top.
+    // if (isset($_SESSION['loggedin']) && $_SESSION['loggedin'] == true) {
+    //     if ($_SESSION['is_admin'] == true) {
+    //     echo '
+    //         <div class="center">
+    //             <button href="/admin/admin-dashboard.php" class="btn btn-primary">Back to Admin Dashboard</button>
+    //         </div>';
+    //     }
+    // }
+    ?>
     <hr />
     <div class="container-fluid">
         <div class="row">
