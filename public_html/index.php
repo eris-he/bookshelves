@@ -38,7 +38,36 @@
                 require 'search/search-form.php';
             ?>
         </div>
+        <div>
+            <?php
+            # get latest access token from database
+            $sql = "SELECT * FROM auth_info ORDER BY expiresAt DESC LIMIT 1";
+            $result = $conn->query($sql);
+            $accessToken = "";
+            while ($row = $result->fetch_assoc()) {
+                $accessToken = $row["accessToken"];
+            }
+            $ch = curl_init('https://connect.squareupsandbox.com/v2/catalog/list');
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            curl_setopt($ch, CURLOPT_HTTPHEADER, [
+                'Square-Version: 2023-10-18',
+                'Authorization: Bearer ' . $accessToken,
+                'Content-Type: application/json'
+            ]);
 
+            $response = curl_exec($ch);
+            // Check for cURL errors
+            if (curl_errno($ch)) {
+                die('cURL error: ' . curl_error($ch));
+            }
+
+            // Close the cURL session
+            curl_close($ch);
+            
+            $response = json_decode($response, true);
+
+            ?>
+        </div>
     </div>
     <div>
         <?php

@@ -6,11 +6,16 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
+    'apimatic\\jsonmapper\\' => array($vendorDir . '/apimatic/jsonmapper/src'),
+    'Unirest\\' => array($vendorDir . '/apimatic/unirest-php/src'),
     'Symfony\\Polyfill\\Php80\\' => array($vendorDir . '/symfony/polyfill-php80'),
     'Symfony\\Polyfill\\Mbstring\\' => array($vendorDir . '/symfony/polyfill-mbstring'),
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
+    'Square\\' => array($vendorDir . '/square/square/src'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'PHPMailer\\PHPMailer\\' => array($vendorDir . '/phpmailer/phpmailer/src'),
     'GrahamCampbell\\ResultType\\' => array($vendorDir . '/graham-campbell/result-type/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),
+    'Core\\' => array($vendorDir . '/apimatic/core/src'),
+    'CoreInterfaces\\' => array($vendorDir . '/apimatic/core-interfaces/src'),
 );

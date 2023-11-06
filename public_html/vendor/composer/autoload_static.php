@@ -13,11 +13,20 @@ class ComposerStaticInite89143f59a8dbc5504704e096d8bb06b
     );
 
     public static $prefixLengthsPsr4 = array (
+        'a' => 
+        array (
+            'apimatic\\jsonmapper\\' => 20,
+        ),
+        'U' => 
+        array (
+            'Unirest\\' => 8,
+        ),
         'S' => 
         array (
             'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Ctype\\' => 23,
+            'Square\\' => 7,
         ),
         'P' => 
         array (
@@ -32,9 +41,22 @@ class ComposerStaticInite89143f59a8dbc5504704e096d8bb06b
         array (
             'Dotenv\\' => 7,
         ),
+        'C' => 
+        array (
+            'Core\\' => 5,
+            'CoreInterfaces\\' => 15,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'apimatic\\jsonmapper\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/apimatic/jsonmapper/src',
+        ),
+        'Unirest\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/apimatic/unirest-php/src',
+        ),
         'Symfony\\Polyfill\\Php80\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
@@ -46,6 +68,10 @@ class ComposerStaticInite89143f59a8dbc5504704e096d8bb06b
         'Symfony\\Polyfill\\Ctype\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-ctype',
+        ),
+        'Square\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/square/square/src',
         ),
         'PhpOption\\' => 
         array (
@@ -63,6 +89,24 @@ class ComposerStaticInite89143f59a8dbc5504704e096d8bb06b
         array (
             0 => __DIR__ . '/..' . '/vlucas/phpdotenv/src',
         ),
+        'Core\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/apimatic/core/src',
+        ),
+        'CoreInterfaces\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/apimatic/core-interfaces/src',
+        ),
+    );
+
+    public static $prefixesPsr0 = array (
+        'R' => 
+        array (
+            'Rs\\Json' => 
+            array (
+                0 => __DIR__ . '/..' . '/php-jsonpointer/php-jsonpointer/src',
+            ),
+        ),
     );
 
     public static $classMap = array (
@@ -79,6 +123,7 @@ class ComposerStaticInite89143f59a8dbc5504704e096d8bb06b
         return \Closure::bind(function () use ($loader) {
             $loader->prefixLengthsPsr4 = ComposerStaticInite89143f59a8dbc5504704e096d8bb06b::$prefixLengthsPsr4;
             $loader->prefixDirsPsr4 = ComposerStaticInite89143f59a8dbc5504704e096d8bb06b::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInite89143f59a8dbc5504704e096d8bb06b::$prefixesPsr0;
             $loader->classMap = ComposerStaticInite89143f59a8dbc5504704e096d8bb06b::$classMap;
 
         }, null, ClassLoader::class);
