@@ -33,9 +33,6 @@
         if (isset($_SESSION['csrf_token'])) {
             $authURL = "https://connect.squareup.com/oauth2/authorize?client_id=" . $_ENV['SQUARE_PROD_APP_ID'] . "&scope=ITEMS_WRITE+ITEMS_READ+INVENTORY_WRITE+INVENTORY_READ&session=false&state=" . $csrfToken;
             echo "<h2 style='text-align:center; margin:auto;'><a href=" . $authURL . ">Authorize Application Here</a></h2>";
-            # display csrf token for debugging
-            // $csrfToString = $_SESSION['csrf_token'];
-            // echo "<h2 style='text-align:center; margin:auto;'>CSRF Token: " . $csrfToString . "</h2>";
         }
 
         # Handle the authorization response when a merchant approves my application

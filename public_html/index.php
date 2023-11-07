@@ -60,10 +60,8 @@
             if (curl_errno($ch)) {
                 die('cURL error: ' . curl_error($ch));
             }
-
-            // Close the cURL session
             curl_close($ch);
-            
+
             $response = json_decode($response, true);
 
             ?>
