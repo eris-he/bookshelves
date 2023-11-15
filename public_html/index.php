@@ -25,6 +25,7 @@
 <head>
     <title>Well Red Bookshelves</title>
     <link href="css/Site.css" rel="stylesheet" />
+    <link href="css/index.css" rel="stylesheet" />
 </head>
 <div class="footer-wrap">
     <div class="body-template">
@@ -36,6 +37,30 @@
         <div>
             <?php
                 require 'search/search-form.php';
+            ?>
+        </div>
+        <div id="main-container">
+            <?php
+                // get some random books to display from the books table in the database
+                $sql = "SELECT * FROM books ORDER BY RAND() LIMIT 15";
+                $result = $conn->query($sql);
+
+                if ($result->num_rows > 0) {
+                    echo "<div id='book-container'>";
+                    // output data of each row
+                    while($row = $result->fetch_assoc()) {
+                        echo "<div class='book'>";
+                        // check that the image exists, if not, use a placeholder
+                        $img_url = "https://covers.openlibrary.org/b/isbn/" . $row['isbn'] . "-L.jpg";
+                        echo "<a href='book/book.php?isbn=" . $row['isbn'] . "'><img class='book-img' src='" . $img_url . "' alt='" . $row['title'] . "'>";
+                        echo "<div class='book-title'>" . htmlspecialchars($row['title']) . "</div>";
+                        echo "</a>";
+                        echo "</div>";
+                    }
+                    echo "</div>";
+                } else {
+                    echo "<h2>No results found</h2>";
+                }
             ?>
         </div>
         <div>

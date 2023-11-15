@@ -2,3 +2,5 @@
 .sql
 authInfo.txt
 .rdf
+*.sql
+*.rdf

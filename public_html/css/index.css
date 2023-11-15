@@ -1,0 +1,75 @@
+#book-container {
+    /* display: flex;
+    margin-top: 2rem;
+    flex-flow: row wrap; */
+    display: grid;
+    grid-gap: 20px; /* Space between cards */
+    margin: 20px 0;
+}
+
+@media screen and (min-width: 1260px) {
+    #book-container {
+        grid-template-columns: repeat(5, 1fr); /* 5 columns */
+    }
+}
+
+@media screen and (min-width: 1000px) and (max-width: 1259px) {
+    #book-container {
+        grid-template-columns: repeat(4, 1fr); /* 4 columns */
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 999px) {
+    #book-container {
+        grid-template-columns: repeat(3, 1fr); /* 3 columns */
+    }
+}
+
+@media screen and (min-width: 500px) and (max-width: 767px) {
+    #book-container {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+    }
+}
+
+.book-img {
+    max-height: 30vh;
+    margin-right: 1em;
+}
+
+.book {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s ease-in-out;
+}
+
+.book:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.book a {
+    text-decoration: none; /* Removes underline from links */
+    color: black; /* Sets the text color to black */
+}
+
+.book-img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.book-title {
+    padding: 10px;
+    text-align: center;
+    font-size: 1em;
+    font-weight: bold;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+#main-container {
+    text-align: center;
+}

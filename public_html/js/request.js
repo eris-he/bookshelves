@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
         // Serialize the form data to send via fetch
         const formData = new FormData(requestForm);
 
-        // Send the form data to the server via AJAX
+        // Send the form data to the server
         fetch('request_controller.php', {
             method: 'POST',
             body: formData,

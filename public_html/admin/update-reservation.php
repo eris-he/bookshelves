@@ -6,13 +6,18 @@ $dotenv->load();
 require_once '../database/dbConn.php';
 
 // Get the POST data
-$requestNumber = $_POST['requestNumber'];
+$reservationNumber = $_POST['reservationNumber'];
 $status = $_POST['status'];
 $isbn = $_POST['isbn'];
+$isArchived = 0;
+
+if ($status == "Completed") {
+    $isArchived = 1;
+}
 
 // Prepare the statement
-$stmt = DB::$conn->prepare("UPDATE requests SET vcISBN = ?, vcStatus = ? WHERE vcRequestNumber = ?");
-$stmt->bind_param("sss", $isbn, $status, $requestNumber);
+$stmt = DB::$conn->prepare("UPDATE reservations SET vcISBN = ?, vcStatus = ?, bIsArchived = ? WHERE vcReservationNumber = ?");
+$stmt->bind_param("ssis", $isbn, $status, $isArchived, $reservationNumber);
 
 // Execute the statement
 if($stmt->execute()) {
